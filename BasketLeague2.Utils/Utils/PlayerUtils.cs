@@ -24,22 +24,27 @@ public static class RandomNameGenerator
     private static readonly string[] FirstNames =
     {
         "Aiden", "Amelia", "Aria", "Ava", "Caden", "Charlotte", "David", "Elijah", "Emily", "Grace", "Grayson",
-        "Harper", "Isabella", "Jackson", "John", "Landon", "Liam", "Lily", "Lucas", "Mateo", "Mia", "Nicole",
-        "Noah", "Olivia", "Sophia", "Sophie", "Zoe"
+        "Harper", "Isabella", "Jackson", "John", "Landon", "Liam", "Lily", "Lucas", "Mateo", "Mia", "Nicole", "Noah",
+        "Olivia", "Sophia", "Sophie", "Zoe", "Benjamin", "Emma", "Ethan", "Hannah", "James", "Jayden", "Leah", "Logan",
+        "Madison", "Mason", "Natalie", "Nathan", "Owen", "Riley", "Samuel", "Scarlett", "Sebastian", "Stella",
+        "Victoria", "William", "Xavier", "Zachary", "Zara"
     };
 
     private static readonly string[] LastNames =
     {
-        "Allen", "Anderson", "Brown", "Clark", "Davis", "Garcia", "Hall", "Harris", "Jackson", "Johnson", "Jones",
-        "King", "Lee", "Lewis", "Martinez", "Martin", "Miller", "Moore", "Robinson", "Rodriguez", "Smith", "Taylor",
-        "Thomas", "Thompson", "Walker", "White", "Williams", "Wilson", "Wright", "Young"
+        "Anderson", "Baker", "Barnes", "Brown", "Carter", "Clark", "Davis", "Edwards", "Evans", "Fisher", "Garcia",
+        "Gonzalez", "Green", "Harris", "Hernandez", "Hill", "Jackson", "Johnson", "Jones", "King", "Lee", "Lewis",
+        "Martin", "Martinez", "Miller", "Moore", "Nelson", "Nguyen", "Parker", "Perez", "Phillips", "Robinson",
+        "Rodriguez", "Sanchez", "Scott", "Smith", "Stewart", "Taylor", "Thomas", "Thompson", "Turner", "Walker",
+        "White", "Williams", "Wilson", "Wright", "Young", "Zimmerman", "Collins", "Murphy"
     };
 
     private static readonly string[] Nicknames =
     {
-        "Ace", "Blaze", "Blitz", "Bolt", "Cypher", "Dagger", "Echo", "Ember", "Fox", "Fury", "Jinx", "Luna",
-        "Mystic", "Nyx", "Nova", "Phoenix", "Raptor", "Raven", "Rex", "Rogue", "Sage", "Sapphire", "Shadow",
-        "Serenity", "Spark", "Storm", "Typhoon", "Viper", "Vortex", "Zephyr"
+        "Ace", "Al", "Ben", "Buddy", "Cami", "Cass", "Charlie", "Dave", "Duke", "Elle", "Ellie", "Em", "Finn", "Gigi",
+        "Izzy", "Jack", "Jake", "Jo", "Johnny", "Jules", "Kat", "Katie", "Leo", "Liv", "Lulu", "Max", "Mick", "Mimi",
+        "Nate", "Nicky", "Pip", "Red", "Ricky", "Rocky", "Sam", "Sunny", "Teddy", "Tommy", "Tony", "Tori", "Vicky",
+        "Wes", "Zane", "Zoe", "Zeke", "Jess", "Frankie", "Bobby", "Jamie", "Jay"
     };
 
     public static string GenerateName()

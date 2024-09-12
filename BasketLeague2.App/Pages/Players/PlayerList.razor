@@ -1,9 +1,9 @@
 ﻿@page "/Players"
+@using BasketLeague2.Utils.Models
+@using Badge = Blazorise.Badge
 
 @inject HttpClient Http
 @inject NavigationManager Navigation
-
-@using BasketLeague2.Utils.Models
 
 <PageTitle>Players</PageTitle>
 
@@ -91,8 +91,6 @@
 
     private string _customFilterValue = "";
     private DataGrid<Player> _dataGrid = new();
-
-    private string _jsonResult = "";
 
     private IEnumerable<Player> _players = new Player[] { };
 
