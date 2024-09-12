@@ -57,15 +57,15 @@ public class Player
             Nickname = $"Shiny {Nickname}";
         }
     }
-
-    public static List<Player> RandomPlayer(int num)
+    
+    public static List<Player> CustomRandomPlayer(int num, int min, int max)
     {
         Random random = new();
         List<Player> players = new();
         for (var i = 0; i < num; i++)
         {
-            players.Add(new Player(random.Next(70, 80), random.Next(70, 80), random.Next(70, 80),
-                random.Next(70, 80), random.Next(70, 80), random.Next(70, 80)));
+            players.Add(new Player(random.Next(min, max), random.Next(min, max), random.Next(min, max),
+                random.Next(min, max), random.Next(min, max), random.Next(min, max)));
         }
 
         return players;

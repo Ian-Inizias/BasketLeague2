@@ -95,7 +95,7 @@ public static class LeagueUtils
     private static int GetTeamIndex(Random random)
     {
         int[] choiceWeight =
-            { 3, 4, 4, 4, 5, 5, 5, 6, 6, 8 }; // Modificar en base a resultados de temporada regular
+            { 2, 3, 3, 4, 4, 5, 5, 5, 7, 7, 8, 10 }; // Modificar en base a resultados de temporada regular
         var cumulativeSum = new int[choiceWeight.Length];
         var sum = 0;
         for (var i = 0; i < choiceWeight.Length; i++)
@@ -112,5 +112,29 @@ public static class LeagueUtils
         }
 
         return teamIndex;
+    }
+
+    /// <summary>
+    /// Calcula los puntos totales anotados por cada jugador en una temporada de la liga
+    /// </summary>
+    /// <param name="results">Listado con todos los resultados de la temporada</param>
+    public static void PlayerPoints(List<AdvancedResult> results)
+    {
+        var allStats = results!.SelectMany(result => result.Stats1.Concat(result.Stats2));
+
+        var groupedSums = new Dictionary<int, int>();
+
+        foreach (var stat in allStats)
+        {
+            var key = stat[0];
+            var sumOfValues = stat.Skip(1).Sum();
+
+            if (!groupedSums.TryAdd(key, sumOfValues))
+            {
+                groupedSums[key] += sumOfValues;
+            }
+        }
+
+        Console.WriteLine(JsonConvert.SerializeObject(groupedSums));
     }
 }

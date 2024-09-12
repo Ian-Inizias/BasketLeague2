@@ -162,7 +162,7 @@
         var playerCode = int.Parse(Codigo);
 
         var allStats = r!.SelectMany(result => result.Stats1.Concat(result.Stats2));
-
+        
         foreach (var stats in allStats.Where(s => s[0] == playerCode))
         {
             _diary.Add(stats);
