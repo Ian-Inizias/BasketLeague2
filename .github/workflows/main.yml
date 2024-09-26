@@ -14,7 +14,7 @@ jobs:
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.403        
+        dotnet-version: 8.0.402        
         # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
       run: dotnet publish BasketLeague2.App/BasketLeague2.App.csproj -c Release -o release --nologo
