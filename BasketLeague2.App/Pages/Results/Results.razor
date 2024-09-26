@@ -1,11 +1,6 @@
-﻿@page "/Results/{Season}"
-@using BasketLeague2.Utils.Models
+﻿@using BasketLeague2.Utils.Models
 
 @inject HttpClient Http
-
-<PageTitle>Results</PageTitle>
-
-<h3>Results</h3>
 
 <TextEdit Style="width:25%" Text="@_customFilterValue" TextChanged="@OnCustomFilterValueChanged"></TextEdit>
 <DataGrid @ref="_dataGrid"

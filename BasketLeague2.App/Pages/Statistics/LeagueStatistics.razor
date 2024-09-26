@@ -9,7 +9,7 @@
 
 <h3>Season</h3>
 <Select TValue="string" Size="Size.Medium" SelectedValue="_season" SelectedValueChanged="@OnSeasonValueChanged">
-    @foreach (var s in LeagueUtils.Seasons)
+    @foreach (var s in LeagueUtils.SeasonsAndPlayoffs)
     {
         <SelectItem Value="s">@s</SelectItem>
     }

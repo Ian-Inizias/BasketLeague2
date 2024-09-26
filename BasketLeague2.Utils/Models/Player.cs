@@ -57,7 +57,7 @@ public class Player
             Nickname = $"Shiny {Nickname}";
         }
     }
-    
+
     public static List<Player> CustomRandomPlayer(int num, int min, int max)
     {
         Random random = new();
