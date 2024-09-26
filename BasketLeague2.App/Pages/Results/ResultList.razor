@@ -1,0 +1,89 @@
+@page "/Results"
+
+<PageTitle>Results</PageTitle>
+
+<h3>Results</h3>
+
+<Divider/>
+
+<Row>
+    <Column>
+        <Tabs SelectedTab="@_selectedTab" SelectedTabChanged="OnSelectedTabChanged">
+            <Items>
+                <Tab Name="T2">Temporada 2</Tab>
+                <Tab Name="T3">Temporada 3</Tab>
+                <Tab Name="T4">Temporada 4</Tab>
+            </Items>
+            <Content>
+                <TabPanel Name="T2">
+                    <ul class="nav nav-underline">
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S2")'>
+                                Temporada 2 (2022-2023)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S2-PO")'>
+                                Temporada 2 (Playoffs)
+                            </a>
+                        </li>
+                    </ul>
+                </TabPanel>
+                <TabPanel Name="T3">
+                    <ul class="nav nav-underline">
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S3")'>
+                                Temporada 3 (2023-2024)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S3-PO")'>
+                                Temporada 3 (Playoffs)
+                            </a>
+                        </li>
+                    </ul>
+                </TabPanel>
+                <TabPanel Name="T4">
+                    <ul class="nav nav-underline">
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S4")'>
+                                Temporada 4 (2024)
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" @onclick='() => SelectSeason("S4-PO")'>
+                                Temporada 4 (Playoffs)
+                            </a>
+                        </li>
+                    </ul>
+                </TabPanel>
+            </Content>
+        </Tabs>
+    </Column>
+</Row>
+
+@if (_selectedSeason != "")
+{
+    <Divider/>
+    <Results Season="@_selectedSeason"/>
+}
+
+@code {
+
+    string _selectedTab = "T2";
+
+    string _selectedSeason = "";
+
+    private Task OnSelectedTabChanged(string name)
+    {
+        _selectedTab = name;
+
+        return Task.CompletedTask;
+    }
+
+    private void SelectSeason(string name)
+    {
+        _selectedSeason = name;
+    }
+
+}

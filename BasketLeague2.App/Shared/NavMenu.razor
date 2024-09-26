@@ -65,30 +65,9 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" @onclick='() => ExpandAndCollapse("Results")'>
+            <NavLink class="nav-link" href="results">
                 <span class="oi oi-file" aria-hidden="true"></span> Results
             </NavLink>
-            @if (_expandSubNavStates["Results"])
-            {
-                <NavLink class="nav-link" href="results/S2">
-                    Temporada 2 (2022-2023)
-                </NavLink>
-                <NavLink class="nav-link" href="results/S2-PO">
-                    Temporada 2 (Playoffs)
-                </NavLink>
-                <NavLink class="nav-link" href="results/S3">
-                    Temporada 3 (2023-2024)
-                </NavLink>
-                <NavLink class="nav-link" href="results/S3-PO">
-                    Temporada 3 (Playoffs)
-                </NavLink>
-                <NavLink class="nav-link" href="results/S4">
-                    Temporada 4 (2024)
-                </NavLink>
-                <NavLink class="nav-link" href="results/S4-PO">
-                    Temporada 4 (Playoffs)
-                </NavLink>
-            }
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" @onclick='() => ExpandAndCollapse("Statistics")'>
@@ -149,7 +128,6 @@
     {
         { "Leaderboard", false },
         { "Timetables", false },
-        { "Results", false },
         { "Drafts", false },
         { "Fortune", false },
         { "Statistics", false }
