@@ -5,8 +5,8 @@ namespace BasketLeague2.Utils.Utils;
 
 public static class LeagueUtils
 {
-    public static readonly string[] Seasons = { "S3", "S4" };
-    public static readonly string[] SeasonsAndPlayoffs = { "S3", "S3-PO", "S4", "S4-PO" };
+    public static readonly string[] Seasons = ["S3", "S4"];
+    public static readonly string[] SeasonsAndPlayoffs = ["S3", "S3-PO", "S4", "S4-PO"];
     public const string CurrentSeason = "S4";
 
     /// <summary>
@@ -96,7 +96,7 @@ public static class LeagueUtils
     private static int GetTeamIndex(Random random)
     {
         int[] choiceWeight =
-            { 2, 3, 3, 4, 4, 5, 5, 5, 7, 7, 8, 10 }; // Modificar en base a resultados de temporada regular
+            [2, 3, 3, 4, 4, 5, 5, 5, 7, 7, 8, 10]; // Modificar en base a resultados de temporada regular
         var cumulativeSum = new int[choiceWeight.Length];
         var sum = 0;
         for (var i = 0; i < choiceWeight.Length; i++)

@@ -98,12 +98,12 @@
 
     [Parameter] public string Codigo { get; set; } = "";
 
-    private List<Badge> _badges = new();
+    private List<Badge> _badges = [];
 
     private Team _team = new();
-    private List<PlayerTeams> _playerTeams = new();
-    private List<Player> _allPlayers = new();
-    private List<Player> _players = new();
+    private List<PlayerTeams> _playerTeams = [];
+    private List<Player> _allPlayers = [];
+    private List<Player> _players = [];
 
     protected override async Task OnInitializedAsync()
     {

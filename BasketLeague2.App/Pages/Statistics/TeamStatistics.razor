@@ -93,18 +93,18 @@
 
 @code {
 
-    private IEnumerable<Team> _teams = new Team[] { };
-    private IEnumerable<AdvancedResult> _resultados = new AdvancedResult[] { };
-    private IEnumerable<PlayerResult> _resultadosJugadoresEquipo = new PlayerResult[] { };
+    private IEnumerable<Team> _teams = [];
+    private IEnumerable<AdvancedResult> _resultados = [];
+    private IEnumerable<PlayerResult> _resultadosJugadoresEquipo = [];
 
-    private List<int> _teamTotals = new();
+    private List<int> _teamTotals = [];
 
     private string _season = LeagueUtils.CurrentSeason;
     private string _teamCodigo = "0";
-    private List<string> _teamCodigos = new();
+    private List<string> _teamCodigos = [];
 
     private Team _team = new();
-    private List<Player> _allPlayers = new();
+    private List<Player> _allPlayers = [];
 
     private LineChart<int> _lineChart = new();
     private LineChart<int> _lineChartPlayers = new();
@@ -122,7 +122,7 @@
         }
     };
 
-    private readonly List<string> _colors = new() { ChartColor.FromRgba(255, 99, 132, 1f), ChartColor.FromRgba(54, 162, 235, 1f), ChartColor.FromRgba(255, 206, 86, 1f), ChartColor.FromRgba(75, 192, 192, 1f), ChartColor.FromRgba(153, 102, 255, 1f), ChartColor.FromRgba(255, 159, 64, 1f) };
+    private readonly List<string> _colors = [ChartColor.FromRgba(255, 99, 132, 1f), ChartColor.FromRgba(54, 162, 235, 1f), ChartColor.FromRgba(255, 206, 86, 1f), ChartColor.FromRgba(75, 192, 192, 1f), ChartColor.FromRgba(153, 102, 255, 1f), ChartColor.FromRgba(255, 159, 64, 1f)];
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -149,14 +149,14 @@
 
     private async Task GetResults()
     {
-        _resultados = new AdvancedResult[] { };
+        _resultados = [];
         var r = await Http.GetFromJsonAsync<List<AdvancedResult>>($"data/results/R_{_season}.json");
         _resultados = _resultados.Concat(r!.OrderBy(result => result.Fecha));
     }
 
     private void GetResultsTeam()
     {
-        _resultadosJugadoresEquipo = new PlayerResult[] { };
+        _resultadosJugadoresEquipo = [];
 
         var results = _resultados.Where(r => r.Equipo1 == _teamCodigo || r.Equipo2 == _teamCodigo).ToList();
         _teamTotals = results.Select(r => r.Equipo1 == _teamCodigo ? r.Resultado1 : r.Resultado2).TakeLast(10).ToList();
@@ -230,7 +230,7 @@
 
     private List<string> GetLabels()
     {
-        List<string> labels = new();
+        List<string> labels = [];
 
         for (var i = 1; i <= 10; i++)
         {

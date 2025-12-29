@@ -41,8 +41,8 @@
 
     [Parameter] public string Season { get; set; } = "";
 
-    private IEnumerable<Team> _teams = new Team[] { };
-    private IEnumerable<Result> _results = new Result[] { };
+    private IEnumerable<Team> _teams = [];
+    private IEnumerable<Result> _results = [];
 
     protected override async Task OnParametersSetAsync()
     {
@@ -59,14 +59,14 @@
 
     private async Task GetTeams()
     {
-        _teams = new Team[] { };
+        _teams = [];
         var t = await Http.GetFromJsonAsync<IEnumerable<Team>>("data/teams.json");
         _teams = _teams.Concat(t!);
     }
 
     private async Task GetResults()
     {
-        _results = new Result[] { };
+        _results = [];
         var r = await Http.GetFromJsonAsync<IEnumerable<Result>>($"data/results/R_{Season}.json");
         _results = _results.Concat(r!);
     }

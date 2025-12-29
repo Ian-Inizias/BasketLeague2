@@ -61,7 +61,7 @@ public class Player
     public static List<Player> CustomRandomPlayer(int num, int min, int max)
     {
         Random random = new();
-        List<Player> players = new();
+        List<Player> players = [];
         for (var i = 0; i < num; i++)
         {
             players.Add(new Player(random.Next(min, max), random.Next(min, max), random.Next(min, max),

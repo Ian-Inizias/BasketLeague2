@@ -129,9 +129,9 @@
     [Parameter] public string Codigo { get; set; } = "";
 
     private Player _player = new();
-    private List<Badge> _badges = new();
-    private List<int[]> _diary = new();
-    private int[] _totals = { 0, 0, 0, 0, 0, 0 };
+    private List<Badge> _badges = [];
+    private List<int[]> _diary = [];
+    private int[] _totals = [0, 0, 0, 0, 0, 0];
 
     private string _season = LeagueUtils.CurrentSeason;
 
@@ -178,7 +178,7 @@
         _season = value;
 
         _diary.Clear();
-        _totals = new[] { 0, 0, 0, 0, 0, 0 };
+        _totals = [0, 0, 0, 0, 0, 0];
         await GetPlayerStatistics(value);
     }
 

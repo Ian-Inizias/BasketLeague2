@@ -17,8 +17,8 @@ public class Result
 /// </summary>
 public class AdvancedResult : Result
 {
-    public int[][] Stats1 { get; init; } = Array.Empty<int[]>();
-    public int[][] Stats2 { get; init; } = Array.Empty<int[]>();
+    public int[][] Stats1 { get; init; } = [];
+    public int[][] Stats2 { get; init; } = [];
 }
 
 /// <summary>

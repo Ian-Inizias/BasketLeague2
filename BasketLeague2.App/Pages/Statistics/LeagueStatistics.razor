@@ -96,7 +96,7 @@
 </CardDeck>
 
 @code {
-    private IEnumerable<AdvancedResult> _resultados = new AdvancedResult[] { };
+    private IEnumerable<AdvancedResult> _resultados = [];
 
     private double _ptsMedia, _ptsMax, _ptsMin;
     private double _ptsDobles, _ptsTriples, _ptsAthleticism, _ptsDefending, _ptsRebounding, _ptsPlaymaking;
@@ -110,7 +110,7 @@
 
     private async Task GetResults()
     {
-        _resultados = new AdvancedResult[] { };
+        _resultados = [];
         var r = await Http.GetFromJsonAsync<List<AdvancedResult>>($"data/results/R_{_season}.json");
 
         _resultados = _resultados.Concat(r!.OrderBy(result => result.Fecha));

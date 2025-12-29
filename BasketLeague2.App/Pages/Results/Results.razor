@@ -158,9 +158,9 @@
 
     [Parameter] public string Season { get; set; } = "";
 
-    private IEnumerable<AdvancedResult> _resultados = new AdvancedResult[] { };
-    private IEnumerable<Team> _teams = new Team[] { };
-    private IEnumerable<Player> _players = new Player[] { };
+    private IEnumerable<AdvancedResult> _resultados = [];
+    private IEnumerable<Team> _teams = [];
+    private IEnumerable<Player> _players = [];
 
     private DataGrid<AdvancedResult> _dataGrid = new();
     private string _customFilterValue = "";
@@ -183,14 +183,14 @@
 
     private async Task GetTeams()
     {
-        _teams = new Team[] { };
+        _teams = [];
         var t = await Http.GetFromJsonAsync<IEnumerable<Team>>("data/teams.json");
         _teams = _teams.Concat(t!.OrderBy(team => team.NombreCompleto));
     }
 
     private async Task GetResults()
     {
-        _resultados = new AdvancedResult[] { };
+        _resultados = [];
         var r = await Http.GetFromJsonAsync<List<AdvancedResult>>($"data/results/R_{Season}.json");
 
         foreach (var result in r!)
@@ -204,7 +204,7 @@
 
     private async Task GetPlayers()
     {
-        _players = new Player[] { };
+        _players = [];
         var p = await Http.GetFromJsonAsync<IEnumerable<Player>>("data/players.json");
         _players = _players.Concat(p!.OrderBy(player => player.Codigo));
     }
